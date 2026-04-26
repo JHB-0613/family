@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가족의 이해 4주차 완전 정복 퀴즈</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.6; padding: 20px; max-width: 850px; margin: auto; background-color: #f8fafc; color: #334155; }
+        h1 { color: #1e293b; text-align: center; border-bottom: 4px solid #3b82f6; padding-bottom: 15px; margin-bottom: 40px; }
+        .question-card { background: white; margin-bottom: 30px; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        .q-num { color: #3b82f6; font-weight: bold; margin-right: 5px; }
+        .q-title { font-weight: bold; font-size: 1.1em; margin-bottom: 20px; display: inline-block; }
+        .options { list-style: none; padding: 0; }
+        .options li { 
+            background: #f1f5f9; margin: 12px 0; padding: 14px; border-radius: 10px; 
+            border: 2px solid transparent; cursor: pointer; transition: 0.2s;
+        }
+        .options li:hover { background: #e2e8f0; }
+        .options li.correct { background: #dcfce7; border-color: #22c55e; color: #166534; font-weight: bold; }
+        .options li.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+        
+        .input-group { display: flex; gap: 10px; margin-top: 15px; }
+        input[type="text"] { flex: 1; padding: 12px; border: 2px solid #cbd5e1; border-radius: 8px; font-size: 1em; }
+        .btn-check { background-color: #3b82f6; color: white; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        
+        .feedback { display: none; margin-top: 20px; padding: 18px; border-radius: 10px; font-size: 0.95em; line-height: 1.6; animation: fadeIn 0.3s; }
+        .feedback.show { display: block; background-color: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a; }
+        .result-icon { font-size: 1.2em; margin-right: 8px; vertical-align: middle; }
+        
+        .nav-container { text-align: center; margin-bottom: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .nav-btn { background-color: #ffffff; color: #3b82f6; border: 2px solid #3b82f6; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; }
+        .nav-btn:hover { background-color: #3b82f6; color: #ffffff; }
+        .nav-btn.active { background-color: #3b82f6; color: #ffffff; box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<h1>가족의 이해 4주차 완전 정복 퀴즈</h1>
+
+<div class="nav-container">
+    <button class="nav-btn" onclick="location.href='index.html'">2주차</button>
+    <button class="nav-btn" onclick="location.href='week3.html'">3주차</button>
+    <button class="nav-btn active" onclick="location.href='week4.html'">4주차</button>
+    <button class="nav-btn" onclick="location.href='week4_2.html'">4주차-2</button>
+    <button class="nav-btn" onclick="location.href='week6.html'">6주차</button>
+    <button class="nav-btn" onclick="location.href='week7.html'">7주차</button>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q1.</span> <div class="q-title">자신에 대한 믿음이 명확하고 자신을 일관되게 정의하며 자신감 있게 표현하는 것을 무엇이라 하는가?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '자아존중감은 자신을 가치 있는 존재로 느끼는 정도입니다.')">① 자아존중감</li>
+        <li onclick="checkMul(this, true, '자신에 대한 믿음이 명확하고 일관된 것을 자아개념 명료성이라고 합니다.')">② 자아개념 명료성</li>
+        <li onclick="checkMul(this, false, '자기효능감은 과제를 성공적으로 수행할 수 있다는 믿음입니다.')">③ 자기효능감</li>
+        <li onclick="checkMul(this, false, '사회적 자기는 타인에게 비춰지는 모습입니다.')">④ 사회적 자기</li>
+        <li onclick="checkMul(this, false, '거짓 자기는 관계상 갈등 관리를 위해 보여주는 모습입니다.')">⑤ 거짓 자기</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q2.</span> <div class="q-title">스턴버그(Sternberg)의 사랑의 삼각형 이론 중, '사랑하는 사람과 가깝고 편안하게 느끼는 정서적 측면'에 해당하는 요소는?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, true, '친밀감은 가깝고 편안하게 느끼는 정서적 요소를 의미합니다.')">① 친밀감</li>
+        <li onclick="checkMul(this, false, '열정은 생리적 자극과 성적 욕구에 기초한 신체적 요소입니다.')">② 열정</li>
+        <li onclick="checkMul(this, false, '결심은 상대방을 사랑하겠다는 의지를 포함하는 인지적 요소입니다.')">③ 결심</li>
+        <li onclick="checkMul(this, false, '책임은 사랑을 지속하겠다는 헌신을 의미합니다.')">④ 책임</li>
+        <li onclick="checkMul(this, false, '낭만은 친밀감과 열정의 결합 형태입니다.')">⑤ 낭만</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q3.</span> <div class="q-title">스턴버그의 이론에서 친밀감, 열정, 결심/책임이 모두 균형 있게 조화를 이룬 사랑의 형태는?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '낭만적 사랑은 친밀감과 열정만 있는 상태입니다.')">① 낭만적 사랑</li>
+        <li onclick="checkMul(this, false, '동반자적 사랑은 친밀감과 결심만 있는 상태입니다.')">② 동반자적 사랑</li>
+        <li onclick="checkMul(this, true, '세 가지 요소가 모두 조화를 이룬 상태를 성숙한 사랑(완전한 사랑)이라고 합니다.')">③ 성숙한 사랑</li>
+        <li onclick="checkMul(this, false, '얼빠진 사랑은 열정과 결심만 있는 상태입니다.')">④ 얼빠진 사랑</li>
+        <li onclick="checkMul(this, false, '우애적 사랑은 친밀감만 강한 상태입니다.')">⑤ 우애적 사랑</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q4.</span> <div class="q-title">리(Lee)의 사랑의 유형 중, '강렬한 신체적 매력을 중시하며 첫눈에 반하는 낭만적 사랑'은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, true, '에로스(Eros)는 열정적이고 신체적인 매력을 강조하는 낭만적 사랑입니다.')">① 에로스(Eros)</li>
+        <li onclick="checkMul(this, false, '스토르게(Storge)는 우정 같은 사랑입니다.')">② 스토르게(Storge)</li>
+        <li onclick="checkMul(this, false, '루두스(Ludus)는 유희적이고 재미를 추구하는 사랑입니다.')">③ 루두스(Ludus)</li>
+        <li onclick="checkMul(this, false, '마니아(Mania)는 소유욕이 강하고 격정적인 사랑입니다.')">④ 마니아(Mania)</li>
+        <li onclick="checkMul(this, false, '프라그마(Pragma)는 실용적이고 조건적인 사랑입니다.')">⑤ 프라그마(Pragma)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q5.</span> <div class="q-title">리(Lee)의 사랑의 유형 중, '에로스와 루두스가 결합된 형태로 소유욕과 집착, 강한 질투'가 특징인 사랑은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '아가페는 헌신적이고 이타적인 사랑입니다.')">① 아가페(Agape)</li>
+        <li onclick="checkMul(this, false, '스토르게는 오랜 시간 알고 지낸 사이의 우애적 사랑입니다.')">② 스토르게(Storge)</li>
+        <li onclick="checkMul(this, true, '마니아(Mania)는 의존적이고 소유욕이 강하며 강렬한 질투를 수반합니다.')">③ 마니아(Mania)</li>
+        <li onclick="checkMul(this, false, '프라그마는 상대를 신중하게 고르는 실용적 사랑입니다.')">④ 프라그마(Pragma)</li>
+        <li onclick="checkMul(this, false, '루두스는 상대를 자주 바꾸는 유희적 사랑입니다.')">⑤ 루두스(Ludus)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q6.</span> <div class="q-title">사랑의 발달 단계에서 '상대방의 독특한 가치를 인정하고 성숙한 사랑으로 나아가는 단계'는?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '인식의 단계는 서로를 탐색하는 초기 단계입니다.')">① 인식의 단계</li>
+        <li onclick="checkMul(this, false, '친밀감 형성 단계는 감정을 공유하는 단계입니다.')">② 친밀감 형성 단계</li>
+        <li onclick="checkMul(this, true, '서로의 개성과 가치를 인정하며 깊은 관계로 발전하는 것은 상호의존 단계입니다.')">③ 상호의존 단계</li>
+        <li onclick="checkMul(this, false, '욕구 충족 단계는 정서적 필요를 채우는 단계입니다.')">④ 욕구 충족 단계</li>
+        <li onclick="checkMul(this, false, '갈등 단계는 관계의 위기를 겪는 단계입니다.')">⑤ 갈등 단계</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q7.</span> <div class="q-title">자아개념의 측면 중 '청년들이 이성관계 내 갈등 관리를 위해 파트너에게 보여주는 모습'이나 실제와 다른 모습은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '이상적 자기는 자신이 바라는 모습입니다.')">① 이상적 자기</li>
+        <li onclick="checkMul(this, false, '현실적 자기는 있는 그대로의 내 모습입니다.')">② 현실적 자기</li>
+        <li onclick="checkMul(this, true, '관계 내에서 갈등을 피하거나 상대에게 맞추기 위해 꾸민 모습은 거짓 자기입니다.')">③ 거짓 자기</li>
+        <li onclick="checkMul(this, false, '거짓 자기에 대한 설명입니다.')">④ 미래적 자기</li>
+        <li onclick="checkMul(this, false, '거짓 자기에 대한 설명입니다.')">⑤ 객관적 자기</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q8.</span> <div class="q-title">성적 권리와 책임에 대한 설명 중 '성적 자기결정권'의 의미로 옳은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '타인의 결정에 따르는 것이 아닙니다.')">① 타인이 정해준 성적 기준을 따를 권리</li>
+        <li onclick="checkMul(this, true, '자신의 성적 행동에 대해 스스로 결정하고 그 결과에 책임을 지는 권리입니다.')">② 자신의 성적 행동을 스스로 결정하고 책임질 권리</li>
+        <li onclick="checkMul(this, false, '권리에는 반드시 책임이 따릅니다.')">③ 책임 없이 자유롭게 성을 향유할 권리</li>
+        <li onclick="checkMul(this, false, '상대의 동의가 전제되어야 합니다.')">④ 상대방의 의사와 상관없이 성을 표현할 권리</li>
+        <li onclick="checkMul(this, false, '국가가 통제하는 권리가 아닙니다.')">⑤ 국가가 부여한 성적 행동만 할 권리</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q9.</span> <div class="q-title">피임법 중 '피임 효과가 99.8%로 매우 높으며, 생리 첫날부터 매일 정해진 시간에 복용해야 하는' 방법은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '콘돔은 물리적 차단 방식입니다.')">① 콘돔 사용</li>
+        <li onclick="checkMul(this, true, '먹는 피임약(경구피임약)은 정해진 시간에 꾸준히 복용할 때 매우 높은 피임률을 보입니다.')">② 먹는 피임약</li>
+        <li onclick="checkMul(this, false, '자궁 내 장치는 병원 시술이 필요합니다.')">③ 자궁 내 장치(루프)</li>
+        <li onclick="checkMul(this, false, '기초체온법은 월경주기를 이용한 방법입니다.')">④ 기초체온법</li>
+        <li onclick="checkMul(this, false, '질외사정은 실패율이 높습니다.')">⑤ 질외사정</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q10.</span> <div class="q-title">응급피임약(사후피임약)에 대한 설명으로 옳은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '72시간 이내에 복용해야 효과가 있습니다.')">① 성관계 후 일주일 이내에 복용하면 된다.</li>
+        <li onclick="checkMul(this, true, '성교 후 72시간 이내에 복용해야 하며, 고농도 호르몬으로 부작용 우려가 있습니다.')">② 성교 후 72시간 이내에 복용해야 하며 부작용 우려가 있다.</li>
+        <li onclick="checkMul(this, false, '일반의약품이 아닌 의사의 처방이 필요한 전문의약품입니다.')">③ 약국에서 누구나 쉽게 구입할 수 있는 일반의약품이다.</li>
+        <li onclick="checkMul(this, false, '고농도 호르몬제입니다.')">④ 호르몬 농도가 낮아 몸에 전혀 해롭지 않다.</li>
+        <li onclick="checkMul(this, false, '매일 먹는 피임약과 혼동하면 안 됩니다.')">⑤ 매일 정해진 시간에 먹어야 효과가 나타난다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q11.</span> <div class="q-title">피임 방법 중 '영구 피임법'에 해당하는 것들로 묶인 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '콘돔은 일회용 차단법입니다.')">① 콘돔, 자궁 내 장치</li>
+        <li onclick="checkMul(this, true, '정관수술과 난관수술은 시술 후 영구적으로 피임 효과가 지속됩니다.')">② 정관수술, 난관수술</li>
+        <li onclick="checkMul(this, false, '피임약은 중단 시 임신이 가능합니다.')">③ 먹는 피임약, 붙이는 피임약</li>
+        <li onclick="checkMul(this, false, '점액관찰법은 자연 피임법입니다.')">④ 점액관찰법, 기초체온법</li>
+        <li onclick="checkMul(this, false, '응급피임약은 일회성입니다.')">⑤ 응급피임약, 살정제</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q12.</span> <div class="q-title">사랑의 특성에 대한 설명 중 옳은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '사랑은 정체된 것이 아니라 역동적으로 변화합니다.')">① 사랑은 한번 형성되면 절대 변하지 않는 고정된 것이다.</li>
+        <li onclick="checkMul(this, false, '이타성과 이기성 사이의 균형이 필요합니다.')">② 사랑은 오직 자기 자신의 만족만을 추구하는 이기적 행위이다.</li>
+        <li onclick="checkMul(this, true, '사랑은 상대방의 복지에 대한 관심과 책임을 동반하는 역동적 감정입니다.')">③ 사랑은 상대의 복지에 관심을 가지고 책임을 지는 역동적인 감정이다.</li>
+        <li onclick="checkMul(this, false, '신뢰와 존중은 사랑의 핵심 요소입니다.')">④ 사랑은 신뢰와 존중 없이 열정만으로 유지될 수 있다.</li>
+        <li onclick="checkMul(this, false, '개인적 발달 단계에 따라 사랑의 의미도 달라집니다.')">⑤ 사랑의 의미는 모든 연령대에서 동일하게 나타난다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q13.</span> <div class="q-title">자연 피임법 중 '배란기 자궁경부에서 나오는 점액의 점성을 관찰하여 피임하는 방법'은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '기초체온법은 온도를 잽니다.')">① 기초체온법</li>
+        <li onclick="checkMul(this, false, '월경주기법은 날짜를 계산합니다.')">② 월경주기법</li>
+        <li onclick="checkMul(this, true, '점액관찰법은 점액의 양과 점성을 통해 배란기를 파악하는 방법입니다.')">③ 점액관찰법</li>
+        <li onclick="checkMul(this, false, '차단법의 일종입니다.')">④ 살정제법</li>
+        <li onclick="checkMul(this, false, '살정제법에 대한 설명입니다.')">⑤ 질 세척법</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q14.</span> <div class="q-title">사랑의 삼각형 이론에서 '친밀감'은 없고 '열정'과 '결심/책임'만 있는 사랑은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '낭만적 사랑은 친밀감+열정입니다.')">① 낭만적 사랑</li>
+        <li onclick="checkMul(this, true, '친밀감 없이 성급하게 헌신하는 사랑을 얼빠진 사랑(Fatuous love)이라고 합니다.')">② 얼빠진 사랑</li>
+        <li onclick="checkMul(this, false, '동반자적 사랑은 친밀감+결심입니다.')">③ 동반자적 사랑</li>
+        <li onclick="checkMul(this, false, '우애적 사랑은 친밀감만 있습니다.')">④ 우애적 사랑</li>
+        <li onclick="checkMul(this, false, '공허한 사랑은 결심만 있습니다.')">⑤ 공허한 사랑</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q15.</span> <div class="q-title">리(Lee)의 사랑의 유형 중 '논리적이고 실용적인 조건(직업, 배경 등)을 고려하는 사랑'은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '루두스는 유희적 사랑입니다.')">① 루두스(Ludus)</li>
+        <li onclick="checkMul(this, false, '에로스는 낭만적 사랑입니다.')">② 에로스(Eros)</li>
+        <li onclick="checkMul(this, true, '프라그마(Pragma)는 조건과 실용성을 중시하는 논리적 사랑입니다.')">③ 프라그마(Pragma)</li>
+        <li onclick="checkMul(this, false, '마니아는 소유적 사랑입니다.')">④ 마니아(Mania)</li>
+        <li onclick="checkMul(this, false, '스토르게는 우애적 사랑입니다.')">⑤ 스토르게(Storge)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q16.</span> <div class="q-title">[단답형] 신체적, 정서적, 사회적으로 자신이 어떠한 사람인지를 규정하는 총체적인 의견을 무엇이라 하는가?</div>
+    <div class="input-group">
+        <input type="text" id="ans16" placeholder="답을 입력하세요" onkeypress="if(event.keyCode==13) checkShort(16, '자아개념', '자아개념은 자신에 대한 생각, 감정, 태도를 모두 포함하는 개념입니다.')">
+        <button class="btn-check" onclick="checkShort(16, '자아개념', '자아개념은 자신에 대한 생각, 감정, 태도를 모두 포함하는 개념입니다.')">정답 확인</button>
+    </div>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q17.</span> <div class="q-title">[단답형] 스턴버그의 사랑의 삼각형 이론에서 친밀감과 열정은 있으나 '결심/책임' 요소가 빠진 사랑의 형태는?</div>
+    <div class="input-group">
+        <input type="text" id="ans17" placeholder="답을 입력하세요" onkeypress="if(event.keyCode==13) checkShort(17, '낭만적', '친밀감과 열정이 결합된 형태를 낭만적 사랑(Romantic love)이라고 합니다.')">
+        <button class="btn-check" onclick="checkShort(17, '낭만적', '친밀감과 열정이 결합된 형태를 낭만적 사랑(Romantic love)이라고 합니다.')">정답 확인</button>
+    </div>
+    <div class="feedback"></div>
+</div>
+
+<script>
+    function checkMul(el, isCorrect, explanation) {
+        const card = el.closest('.question-card');
+        const feedback = card.querySelector('.feedback');
+        const options = card.querySelectorAll('li');
+        
+        options.forEach(li => li.className = '');
+        
+        if (isCorrect) {
+            el.className = 'correct';
+            feedback.innerHTML = `<span class="result-icon">✅</span> <strong>정답입니다!</strong><br>${explanation}`;
+        } else {
+            el.className = 'wrong';
+            feedback.innerHTML = `<span class="result-icon">❌</span> <strong>오답입니다.</strong><br>${explanation}`;
+        }
+        feedback.className = 'feedback show';
+    }
+
+    function checkShort(id, correct, explanation) {
+        const input = document.getElementById('ans' + id);
+        const card = input.closest('.question-card');
+        const feedback = card.querySelector('.feedback');
+        const val = input.value.trim();
+        
+        if (val.includes(correct)) {
+            feedback.innerHTML = `<span class="result-icon">✅</span> <strong>정답입니다!</strong><br>${explanation}`;
+        } else {
+            feedback.innerHTML = `<span class="result-icon">❌</span> <strong>틀렸습니다.</strong> 다시 생각해보세요.<br>(힌트: ${explanation.split('.')[0]}...)`;
+        }
+        feedback.className = 'feedback show';
+    }
+</script>
+
+</body>
+</html>

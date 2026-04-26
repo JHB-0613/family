@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가족의 이해 3주차 완전 정복 퀴즈</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.6; padding: 20px; max-width: 850px; margin: auto; background-color: #f8fafc; color: #334155; }
+        h1 { color: #1e293b; text-align: center; border-bottom: 4px solid #3b82f6; padding-bottom: 15px; margin-bottom: 40px; }
+        .question-card { background: white; margin-bottom: 30px; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        .q-num { color: #3b82f6; font-weight: bold; margin-right: 5px; }
+        .q-title { font-weight: bold; font-size: 1.1em; margin-bottom: 20px; display: inline-block; }
+        .options { list-style: none; padding: 0; }
+        .options li { 
+            background: #f1f5f9; margin: 12px 0; padding: 14px; border-radius: 10px; 
+            border: 2px solid transparent; cursor: pointer; transition: 0.2s;
+        }
+        .options li:hover { background: #e2e8f0; }
+        .options li.correct { background: #dcfce7; border-color: #22c55e; color: #166534; font-weight: bold; }
+        .options li.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+        
+        .input-group { display: flex; gap: 10px; margin-top: 15px; }
+        input[type="text"] { flex: 1; padding: 12px; border: 2px solid #cbd5e1; border-radius: 8px; font-size: 1em; }
+        .btn-check { background-color: #3b82f6; color: white; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        
+        .feedback { display: none; margin-top: 20px; padding: 18px; border-radius: 10px; font-size: 0.95em; line-height: 1.6; animation: fadeIn 0.3s; }
+        .feedback.show { display: block; background-color: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a; }
+        .result-icon { font-size: 1.2em; margin-right: 8px; vertical-align: middle; }
+        
+        .nav-container { text-align: center; margin-bottom: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .nav-btn { background-color: #ffffff; color: #3b82f6; border: 2px solid #3b82f6; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; }
+        .nav-btn:hover { background-color: #3b82f6; color: #ffffff; }
+        .nav-btn.active { background-color: #3b82f6; color: #ffffff; box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<h1>가족의 이해 3주차 완전 정복 퀴즈</h1>
+
+<div class="nav-container">
+    <button class="nav-btn" onclick="location.href='index.html'">2주차</button>
+    <button class="nav-btn active" onclick="location.href='week3.html'">3주차</button>
+    <button class="nav-btn" onclick="location.href='week4.html'">4주차</button>
+    <button class="nav-btn" onclick="location.href='week4_2.html'">4주차-2</button>
+    <button class="nav-btn" onclick="location.href='week6.html'">6주차</button>
+    <button class="nav-btn" onclick="location.href='week7.html'">7주차</button>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q1.</span> <div class="q-title">이론의 기능 중, 산발적인 연구 결과를 규칙적으로 정리하여 일관되게 축적하고 새로운 아이디어를 도출하는 기능은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '안내는 이론을 실제 검증하는 과정을 의미합니다.')">① 안내(Guidance)</li>
+        <li onclick="checkMul(this, true, '산발적 연구의 체계적 축적과 새로운 아이디어 도출은 이론의 축적 기능입니다.')">② 축적(Accumulation)</li>
+        <li onclick="checkMul(this, false, '정확성은 개념 정의의 명확성을 의미합니다.')">③ 정확성(Precision)</li>
+        <li onclick="checkMul(this, false, '연결은 과거와 현재의 현상을 해석하는 것과 관련이 깊습니다.')">④ 연결(Connection)</li>
+        <li onclick="checkMul(this, false, '예측은 미래의 현상을 미리 가늠하는 기능입니다.')">⑤ 예측(Prediction)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q2.</span> <div class="q-title">가족을 사회 유지와 통합을 위한 기본 사회제도로 보며, 모든 요소가 유기체처럼 조화를 이룬다고 보는 이론은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, true, '가족을 사회 유지와 통합의 기제로 보는 것은 구조기능론의 핵심 정의입니다.')">① 구조기능론</li>
+        <li onclick="checkMul(this, false, '교환론은 보상과 비용의 관점에서 접근합니다.')">② 교환론</li>
+        <li onclick="checkMul(this, false, '상징적 상호작용론은 의미 해석에 초점을 둡니다.')">③ 상징적 상호작용론</li>
+        <li onclick="checkMul(this, false, '갈등론은 권력 불평등에 초점을 둡니다.')">④ 갈등론</li>
+        <li onclick="checkMul(this, false, '체계론은 상호 연결된 복잡한 체계로 이해합니다.')">⑤ 체계론</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q3.</span> <div class="q-title">구조기능론에서 부모의 역할을 '생계부양자'와 '정서적 역할'로 나눌 때, 생계부양자의 역할을 일컫는 용어는?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '표현적 역할은 정서적 역할을 의미합니다.')">① 표현적 역할</li>
+        <li onclick="checkMul(this, true, '생계부양자로서의 역할은 도구적 역할이라고 합니다.')">② 도구적 역할</li>
+        <li onclick="checkMul(this, false, '상호작용 역할은 다른 이론의 개념입니다.')">③ 상호작용 역할</li>
+        <li onclick="checkMul(this, false, '기능적 역할은 이론 전체의 성격을 뜻합니다.')">④ 기능적 역할</li>
+        <li onclick="checkMul(this, false, '재생산 역할은 구성원 충원을 의미합니다.')">⑤ 재생산 역할</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q4.</span> <div class="q-title">가족관계를 보상과 비용의 관계로 보며, 최소의 비용으로 보상을 극대화하려는 방향으로 자원을 교환한다고 보는 이론은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '구조기능론은 사회 통합을 강조합니다.')">① 구조기능론</li>
+        <li onclick="checkMul(this, true, '보상과 비용, 최소 비용 최대 보상은 교환론의 핵심 개념입니다.')">② 교환론</li>
+        <li onclick="checkMul(this, false, '체계론은 항상성을 강조합니다.')">③ 체계론</li>
+        <li onclick="checkMul(this, false, '페미니즘은 가부장제 비판에 집중합니다.')">④ 페미니즘</li>
+        <li onclick="checkMul(this, false, '갈등론은 자원의 불평등을 강조합니다.')">⑤ 갈등론</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q5.</span> <div class="q-title">상징적 상호작용론에서 '사회적 지위에 따른 행위 규범'을 의미하며 자신과 타인과의 상호작용 내 예측 행동을 가능하게 해주는 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '정체성은 자신에 대해 떠올려지는 의미나 가치입니다.')">① 정체성</li>
+        <li onclick="checkMul(this, true, '지위에 따른 행위 규범과 예측 가능성을 제공하는 것은 역할의 개념입니다.')">② 역할</li>
+        <li onclick="checkMul(this, false, '맥락은 사회와 문화적 환경을 의미합니다.')">③ 맥락</li>
+        <li onclick="checkMul(this, false, '상징은 공유된 의미를 뜻합니다.')">④ 상징</li>
+        <li onclick="checkMul(this, false, '항상성은 체계론의 개념입니다.')">⑤ 항상성</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q6.</span> <div class="q-title">상징적 상호작용론의 특징으로 옳지 않은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '인간을 상황을 스스로 규정하는 능동적 존재로 봅니다.')">① 인간을 능동적인 존재로 바라본다.</li>
+        <li onclick="checkMul(this, false, '가족원들이 가진 생각의 해석과 반응에 주목합니다.')">② 가족구성원의 상호작용과 의미 해석에 주목한다.</li>
+        <li onclick="checkMul(this, true, '상징적 상호작용론은 거시적 관점이 아닌 미시적 관점의 이론입니다.')">③ 가족 문제를 거시적인 사회 구조 안에서만 설명한다.</li>
+        <li onclick="checkMul(this, false, '주관적 해석에 치중하여 객관적 사실을 간과할 위험이 단점으로 지적됩니다.')">④ 주관적 해석에 지나치게 주목할 위험이 있다.</li>
+        <li onclick="checkMul(this, false, '가족 내 맥락은 구성원의 협상과 타협으로 형성되기도 합니다.')">⑤ 맥락은 가족구성원의 협상으로 형성되기도 한다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q7.</span> <div class="q-title">가족을 '사회갈등의 축소판'으로 보며, 경제구조와 권력 관계의 영향을 받는 지배-종속 관계로 파악한 학자는?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '머독은 가족의 3가지 특징을 정의했습니다.')">① 머독(Murdock)</li>
+        <li onclick="checkMul(this, false, '파슨즈는 구조기능론의 대표 학자입니다.')">② 파슨즈(Parsons)</li>
+        <li onclick="checkMul(this, true, '칼 마르크스는 가족을 자본주의 체제 내 지배-종속 관계가 존재하는 사회갈등의 축소판으로 보았습니다.')">③ 칼 마르크스(Karl Marx)</li>
+        <li onclick="checkMul(this, false, '스프레이는 가족 내 자율 대 통합 갈등을 제시했습니다.')">④ 스프레이(Sprey)</li>
+        <li onclick="checkMul(this, false, '홉스는 인간의 본질적 탐욕에 의한 갈등을 전제했습니다.')">⑤ 홉스(Hobbes)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q8.</span> <div class="q-title">갈등론의 주요 개념에 대한 설명으로 옳은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '갈등론은 갈등이 불가피하며 변화의 원동력이 된다고 봅니다.')">① 가족 내 갈등은 반드시 제거되어야 할 부정적 요소이다.</li>
+        <li onclick="checkMul(this, true, '자원이 많은 사람에게 유리하게 협상이 진행된다는 것이 갈등론의 주요 관점입니다.')">② 갈등에 따른 협상은 가족 안에서 자원이 가장 많은 사람에게 유리하게 진행된다.</li>
+        <li onclick="checkMul(this, false, '가족원 간의 결합(동맹)은 권위주의적 가족보다 민주적인 가족에서 더 잘 일어납니다.')">③ 가족원 간의 동맹은 권위주의적 가족에서 일어날 가능성이 높다.</li>
+        <li onclick="checkMul(this, false, '갈등론은 가족원 간의 애정이나 배려에 대한 설명이 부족한 것이 단점입니다.')">④ 가족원 간의 희생과 사랑을 가장 완벽하게 설명하는 이론이다.</li>
+        <li onclick="checkMul(this, false, '갈등론은 거시적 관점에 해당합니다.')">⑤ 미시적 의사소통 기술을 최우선으로 분석한다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q9.</span> <div class="q-title">체계론의 주요 개념 중 '가족은 갈등 상태라도 기존의 안정된 상태를 유지하려 한다'는 속성을 무엇이라 하는가?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '전체성은 시스템을 전체를 통해 이해해야 함을 뜻합니다.')">① 전체성</li>
+        <li onclick="checkMul(this, true, '가족이 기존의 안정 상태를 유지하려고 하는 성질은 항상성입니다.')">② 항상성</li>
+        <li onclick="checkMul(this, false, '하위체계는 부부, 부모-자녀 등 가족 내 소집단을 의미합니다.')">③ 하위체계</li>
+        <li onclick="checkMul(this, false, '경계는 가족 안팎의 심리적, 정서적 거리를 나타냅니다.')">④ 경계</li>
+        <li onclick="checkMul(this, false, '자기성찰은 스스로를 돌아보고 목표를 세우는 체계입니다.')">⑤ 자기성찰</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q10.</span> <div class="q-title">체계론에서 가족 안팎의 심리적·정서적 거리로서 가족과 외부, 구성원 간의 거리를 나타내는 개념은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '통합성은 과학 전체를 통합하는 잠재력을 의미합니다.')">① 통합성</li>
+        <li onclick="checkMul(this, false, '하위체계는 집단의 구성을 뜻합니다.')">② 하위체계</li>
+        <li onclick="checkMul(this, true, '가족 내외부의 거리를 나타내며 경직, 모호, 명확 등으로 나뉘는 것은 경계입니다.')">③ 경계</li>
+        <li onclick="checkMul(this, false, '항상성은 안정 유지를 뜻합니다.')">④ 항상성</li>
+        <li onclick="checkMul(this, false, '전체성은 부분의 합보다 큼을 의미합니다.')">⑤ 전체성</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q11.</span> <div class="q-title">체계론의 장점에 대한 설명으로 옳은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '체계론은 거시적 사회 구조 설명에 한계가 있다는 비판을 받습니다.')">① 사회 구조의 거시적 영향을 가장 잘 설명한다.</li>
+        <li onclick="checkMul(this, true, '개인이 아닌 가족 전체 맥락에서 전체성과 상호의존을 근거로 이해하여 가족치료에 유용합니다.')">② 가족상담 및 가족치료 적용에 매우 유용하다.</li>
+        <li onclick="checkMul(this, false, '개인의 심리적 특성 설명이 부족한 것이 단점입니다.')">③ 개인의 독특한 심리적 특성을 완벽히 포괄한다.</li>
+        <li onclick="checkMul(this, false, '이념적 편향성은 페미니즘이 주로 받는 비판입니다.')">④ 이념적 편향성이 없어 모든 학자가 동의한다.</li>
+        <li onclick="checkMul(this, false, '가족 유지를 강조하여 오히려 보수적이라는 평가를 받습니다.')">⑤ 가족의 급진적 변화와 해체를 적극 장려한다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q12.</span> <div class="q-title">페미니즘 이론에 대한 설명으로 옳지 않은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '여성 차별적 사회 구조를 비판하고 변화시키려는 관점입니다.')">① 여성 차별적 사회 구조를 적극 비판한다.</li>
+        <li onclick="checkMul(this, true, '정상가족 모델을 고수하는 것이 아니라, 그 고정관념에서 탈피하여 다양한 가족 수용을 주장합니다.')">② 정상가족(핵가족)의 모델을 고수하며 강화하려 한다.</li>
+        <li onclick="checkMul(this, false, '가부장제와 성별분업으로 인한 억압을 설명합니다.')">③ 가족 내 가부장제와 성별 불평등 문제를 명확히 설명한다.</li>
+        <li onclick="checkMul(this, false, '여성 지위 향상을 위한 운동적 성격이 강합니다.')">④ 여성의 지위 향상을 위한 운동적 성격이 강하다.</li>
+        <li onclick="checkMul(this, false, '남성의 경험에 대한 설명이 제한적인 것이 단점으로 지적됩니다.')">⑤ 남성 경험에 대한 설명이 제한적이라는 비판을 받는다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q13.</span> <div class="q-title">페미니즘의 유형 중, 사회 계급 차별이 성별 불평등에서 유래되었다고 보며 모든 것의 평등을 주장하는 유형은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '자유주의 페미니즘은 기존 사회 체제 내에서의 변혁을 추구합니다.')">① 자유주의 페미니즘</li>
+        <li onclick="checkMul(this, true, '계급 차별의 근원을 성별 불평등으로 보며 근본적인 평등을 주장하는 것은 급진주의적 페미니즘입니다.')">② 급진주의적 페미니즘</li>
+        <li onclick="checkMul(this, false, '사회주의 페미니즘은 여성 문제와 경제(계급) 문제를 모두 다룹니다.')">③ 사회주의 페미니즘</li>
+        <li onclick="checkMul(this, false, '제3세대 페미니즘은 젠더, 인종, 종교 등을 결합하여 접근합니다.')">④ 제3세대 페미니즘</li>
+        <li onclick="checkMul(this, false, '제4세대 페미니즘은 성적 범죄로부터의 자유와 인터넷 청원 등을 강조합니다.')">⑤ 제4세대 페미니즘</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q14.</span> <div class="q-title">각 이론의 분석 단위와 핵심 개념 연결이 틀린 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '구조기능론은 거시적 단위에서 기능과 안정을 분석합니다.')">① 구조기능론 - 거시적 - 기능, 역할, 안정</li>
+        <li onclick="checkMul(this, false, '상징적 상호작용론은 미시적 단위에서 의미와 의사소통을 분석합니다.')">② 상징적 상호작용론 - 미시적 - 상징, 의미, 자아개념</li>
+        <li onclick="checkMul(this, true, '교환이론은 거시적이 아닌 미시적 단위에서 개인 간의 보상과 비용을 분석합니다.')">③ 교환이론 - 거시적 - 보상, 비용, 호혜성</li>
+        <li onclick="checkMul(this, false, '체계이론은 통합적 단위에서 항상성과 경계를 분석합니다.')">④ 체계이론 - 통합적 - 전체성, 하위체계, 항상성</li>
+        <li onclick="checkMul(this, false, '갈등이론은 거시적 단위에서 권력과 자원의 불평등을 분석합니다.')">⑤ 갈등이론 - 거시적 - 권력, 자원, 불평등</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q15.</span> <div class="q-title">이론의 정의 중 '개별적인 것들을 일반화하고, 구체적인 것들을 추상화하는 작업'이라고 정의한 학자는?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '터너는 사건의 발생 원인을 설명하는 과정으로 정의했습니다.')">① 터너(Turner)</li>
+        <li onclick="checkMul(this, true, '알렉산더는 개별적 사실의 일반화와 구체적 사실의 추상화 작업을 이론으로 정의했습니다.')">② 알렉산더(Alexander)</li>
+        <li onclick="checkMul(this, false, '파슨즈는 핵가족 구조의 부합성을 강조했습니다.')">③ 파슨즈(Parsons)</li>
+        <li onclick="checkMul(this, false, '기틴스는 다양한 가족의 정의 필요성을 주장했습니다.')">④ 기틴스(Gittins)</li>
+        <li onclick="checkMul(this, false, '홉스는 인간의 본질적 탐욕을 강조했습니다.')">⑤ 홉스(Hobbes)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q16.</span> <div class="q-title">[단답형] 체계론에서 케이크의 재료인 설탕, 밀가루를 이해한 것이 곧 케이크 전체를 이해한 것은 아니라는 원리를 무엇이라 하는가?</div>
+    <div class="input-group">
+        <input type="text" id="ans16" placeholder="답을 입력하세요" onkeypress="if(event.keyCode==13) checkShort(16, '전체성', '시스템은 부분의 합보다 크며 전체를 통해 이해해야 한다는 전체성의 원리입니다.')">
+        <button class="btn-check" onclick="checkShort(16, '전체성', '시스템은 부분의 합보다 크며 전체를 통해 이해해야 한다는 전체성의 원리입니다.')">정답 확인</button>
+    </div>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q17.</span> <div class="q-title">[단답형] 2012년부터 시작된 페미니즘 유형으로, 여성의 정형화된 모습을 범죄 대상으로 보는 시각에 항의하고 SNS 등을 통해 성적 범죄로부터의 자유를 강화하려는 흐름은?</div>
+    <div class="input-group">
+        <input type="text" id="ans17" placeholder="답을 입력하세요" onkeypress="if(event.keyCode==13) checkShort(17, '제4세대', '2012년부터 온라인과 SNS를 중심으로 발달한 제4세대 페미니즘입니다.')">
+        <button class="btn-check" onclick="checkShort(17, '제4세대', '2012년부터 온라인과 SNS를 중심으로 발달한 제4세대 페미니즘입니다.')">정답 확인</button>
+    </div>
+    <div class="feedback"></div>
+</div>
+
+<script>
+    function checkMul(el, isCorrect, explanation) {
+        const card = el.closest('.question-card');
+        const feedback = card.querySelector('.feedback');
+        const options = card.querySelectorAll('li');
+        
+        options.forEach(li => li.className = '');
+        
+        if (isCorrect) {
+            el.className = 'correct';
+            feedback.innerHTML = `<span class="result-icon">✅</span> <strong>정답입니다!</strong><br>${explanation}`;
+        } else {
+            el.className = 'wrong';
+            feedback.innerHTML = `<span class="result-icon">❌</span> <strong>오답입니다.</strong><br>${explanation}`;
+        }
+        feedback.className = 'feedback show';
+    }
+
+    function checkShort(id, correct, explanation) {
+        const input = document.getElementById('ans' + id);
+        const card = input.closest('.question-card');
+        const feedback = card.querySelector('.feedback');
+        const val = input.value.trim();
+        
+        if (val.includes(correct)) {
+            feedback.innerHTML = `<span class="result-icon">✅</span> <strong>정답입니다!</strong><br>${explanation}`;
+        } else {
+            feedback.innerHTML = `<span class="result-icon">❌</span> <strong>틀렸습니다.</strong> 다시 생각해보세요.<br>(힌트: ${explanation.split('.')[0]}...)`;
+        }
+        feedback.className = 'feedback show';
+    }
+</script>
+
+</body>
+</html>

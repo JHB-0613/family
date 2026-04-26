@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가족의 이해 6주차 - 만남과 헤어짐 퀴즈</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.6; padding: 20px; max-width: 850px; margin: auto; background-color: #f8fafc; color: #334155; }
+        h1 { color: #1e293b; text-align: center; border-bottom: 4px solid #3b82f6; padding-bottom: 15px; margin-bottom: 40px; }
+        .question-card { background: white; margin-bottom: 30px; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        .q-num { color: #3b82f6; font-weight: bold; margin-right: 5px; }
+        .q-title { font-weight: bold; font-size: 1.1em; margin-bottom: 20px; display: inline-block; }
+        .options { list-style: none; padding: 0; }
+        .options li { 
+            background: #f1f5f9; margin: 12px 0; padding: 14px; border-radius: 10px; 
+            border: 2px solid transparent; cursor: pointer; transition: 0.2s;
+        }
+        .options li:hover { background: #e2e8f0; }
+        .options li.correct { background: #dcfce7; border-color: #22c55e; color: #166534; font-weight: bold; }
+        .options li.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+        
+        .input-group { display: flex; gap: 10px; margin-top: 15px; }
+        input[type="text"] { flex: 1; padding: 12px; border: 2px solid #cbd5e1; border-radius: 8px; font-size: 1em; }
+        .btn-check { background-color: #3b82f6; color: white; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        
+        .feedback { display: none; margin-top: 20px; padding: 18px; border-radius: 10px; font-size: 0.95em; line-height: 1.6; animation: fadeIn 0.3s; }
+        .feedback.show { display: block; background-color: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a; }
+        .result-icon { font-size: 1.2em; margin-right: 8px; vertical-align: middle; }
+        
+        .nav-container { text-align: center; margin-bottom: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .nav-btn { background-color: #ffffff; color: #3b82f6; border: 2px solid #3b82f6; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; }
+        .nav-btn:hover { background-color: #3b82f6; color: #ffffff; }
+        .nav-btn.active { background-color: #3b82f6; color: #ffffff; box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<h1>가족의 이해 6주차 만남과 헤어짐 퀴즈</h1>
+
+<div class="nav-container">
+    <button class="nav-btn" onclick="location.href='index.html'">2주차</button>
+    <button class="nav-btn" onclick="location.href='week3.html'">3주차</button>
+    <button class="nav-btn" onclick="location.href='week4.html'">4주차</button>
+    <button class="nav-btn" onclick="location.href='week4_2.html'">4주차-2</button>
+    <button class="nav-btn active" onclick="location.href='week6.html'">6주차</button>
+    <button class="nav-btn" onclick="location.href='week7.html'">7주차</button>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q1.</span> <div class="q-title">강의 자료에서 설명하는 '연애(戀愛)'의 정의와 가장 거리가 먼 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '자료에 명시된 연애의 한자 풀이입니다.')">① 남녀가 서로 사랑을 이어가고 그리워한다는 뜻</li>
+        <li onclick="checkMul(this, false, '로맨틱한 관계를 갖는다는 의미를 포함합니다.')">② 데이트(date)나 로맨틱한 관계라는 의미</li>
+        <li onclick="checkMul(this, false, '연애 과정을 통해 동반자 여부를 결정하게 됩니다.')">③ 서로 동반자로 함께할 것인지 결정하는 과정</li>
+        <li onclick="checkMul(this, true, '연애는 성장뿐 아니라 상처를 남길 수도 있는 양면성을 가집니다.')">④ 언제나 고통 없이 인격적인 성장만을 제공하는 기회</li>
+        <li onclick="checkMul(this, false, '함께 시간을 보내며 소통하는 과정을 포함합니다.')">⑤ 함께 시간을 보내고 소통하며 서로를 알아가는 관계</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q2.</span> <div class="q-title">친밀한 파트너가 있을 때의 장점으로 Constantine & Keith(1994)가 제시한 내용이 아닌 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '11번째 장점으로 명시되어 있습니다.')">① 다른 성에 대해 배움(Learning About Other Sex)</li>
+        <li onclick="checkMul(this, false, '6번째 장점으로 명시되어 있습니다.')">② 자기 성장과 자기이해(Self-Growth and Self-Understanding)</li>
+        <li onclick="checkMul(this, true, '연애는 큰 감정 에너지를 필요로 하여 집중력 저하를 일으킬 수 있는 부정적 측면이 있습니다.')">③ 학업 및 업무 집중력의 비약적 상승</li>
+        <li onclick="checkMul(this, false, '12번째 장점으로 명시되어 있습니다.')">④ 파트너의 주변인으로부터의 사회적 지지</li>
+        <li onclick="checkMul(this, false, '7번째 장점으로 명시되어 있습니다.')">⑤ 관계 전문가(Expertise in Relationships)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q3.</span> <div class="q-title">연애의 기능 중 '자아의식과 정서적 안정감 발달' 및 '자신의 장단점 파악'과 관련된 기능은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '공감대 형성 및 사회적 기술 습득과 관련됩니다.')">① 사회화</li>
+        <li onclick="checkMul(this, false, '즐거운 경험과 여가를 즐기는 것과 관련됩니다.')">② 오락</li>
+        <li onclick="checkMul(this, true, '자신의 장단점을 파악하고 정서적 안정감을 발달시키는 것은 인격의 성장 기능입니다.')">③ 인격의 성장</li>
+        <li onclick="checkMul(this, false, '일상을 공유하고 욕구를 충족하는 것과 관련됩니다.')">④ 동반자</li>
+        <li onclick="checkMul(this, false, '특정 지위나 역할을 부여받는 것과 관련됩니다.')">⑤ 사회적 지위 달성</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q4.</span> <div class="q-title">미혼남녀의 교제 상대 유무에 대한 보건사회연구(2018)의 결과로 옳은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '미혼남녀의 과반수는 교제 상대가 없다고 조사되었습니다.')">① 미혼남녀의 대부분은 현재 교제 중이다.</li>
+        <li onclick="checkMul(this, true, '연령이 높을수록 교제 상대가 없는 비율이 높은 정적 관계를 보입니다.')">② 연령이 높을수록 교제 상대가 없는 비율이 높다.</li>
+        <li onclick="checkMul(this, false, '자발적 이유보다 비자발적 이유가 다수를 차지합니다.')">③ 교제를 하지 않는 이유는 주로 자발적인 선택이다.</li>
+        <li onclick="checkMul(this, false, '남성에게 가장 높은 이유는 적당한 상대를 만나지 못해서입니다.')">④ 남성이 교제하지 않는 1위 이유는 금전적 부담이다.</li>
+        <li onclick="checkMul(this, false, '여성은 혼자만의 자유로움을 잃고 싶지 않아서 교제를 안 하는 비율이 남성보다 높습니다.')">⑤ 남성이 여성보다 자유로움을 위해 교제를 거부하는 비율이 높다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q5.</span> <div class="q-title">배우자 조건에 대한 남녀의 인식 차이 중 강의 자료의 내용과 일치하는 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '남성보다 여성에게 더 중요하게 나타납니다.')">① 여성은 남성보다 경제력을 전혀 고려하지 않는다.</li>
+        <li onclick="checkMul(this, true, '여성은 가사나 육아에 대한 태도 및 일에 대한 협조를 중요시합니다.')">② 여성은 가사나 육아에 대한 태도를 중요하게 생각한다.</li>
+        <li onclick="checkMul(this, false, '남성에게 직업과 경제력은 매우 중요한 요소로 나타납니다.')">③ 남성에게 직업과 경제력은 하위 순위 요소이다.</li>
+        <li onclick="checkMul(this, false, '성격은 만남을 지속하게 하는 가장 중요한 요소입니다.')">④ 신체적 매력은 성격보다 관계 지속에 더 중요하다.</li>
+        <li onclick="checkMul(this, false, '상이성보다 수용성과 배려가 더 중요하다고 명시되어 있습니다.')">⑤ 성격의 유사성만이 부부 만족도의 유일한 지표이다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q6.</span> <div class="q-title">헤어짐의 원인 중 '매력적이라고 느꼈던 이유가 헤어지는 이유가 되기도 하는 경우'의 예시는?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '애착 유형에 따른 태도 차이입니다.')">① 상대방의 낮은 자아존중감 때문에</li>
+        <li onclick="checkMul(this, false, '통제 행동의 예시입니다.')">② 가스라이팅으로 인해 의존적이 되어서</li>
+        <li onclick="checkMul(this, true, '사교적이고 운동을 잘해서 좋아했던 파트너가 그 활동에 너무 많은 시간을 써서 헤어지는 경우가 이에 해당합니다.')">③ 사교적이고 운동을 잘하는 모습에 끌렸으나, 그 활동 시간이 너무 길어서</li>
+        <li onclick="checkMul(this, false, '심리적 거리의 차이입니다.')">④ 서로가 생각하는 정서적 거리의 차이가 커서</li>
+        <li onclick="checkMul(this, false, '자기애에 대한 설명입니다.')">⑤ 파트너가 작은 지적이나 비난을 참지 못해서</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q7.</span> <div class="q-title">자기애(Narcissism)가 강한 사람의 특징으로 적절하지 않은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '특권의식을 가지고 과대 포장하는 경향이 있습니다.')">① 자신의 재능이나 업적에 대해 과대 포장함</li>
+        <li onclick="checkMul(this, false, '파트너에게 끊임없는 인정과 칭찬을 요구합니다.')">② 파트너에게 인정과 칭찬을 강력히 원함</li>
+        <li onclick="checkMul(this, false, '작은 비난도 견디지 못하는 경향이 있습니다.')">③ 타인의 작은 지적이나 비난에 민감하게 반응함</li>
+        <li onclick="checkMul(this, true, '자기애가 강한 사람은 타인에 대한 배려가 부족한 자기중심적인 모습을 보입니다.')">④ 타인에 대한 깊은 배려심으로 파트너를 감동시킴</li>
+        <li onclick="checkMul(this, false, '자신감이 있어 보이나 내면은 약한 상태입니다.')">⑤ 겉보기에는 자신감 넘치나 내면은 취약함</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q8.</span> <div class="q-title">상대의 기분을 조작하여 잘못한 것처럼 느끼게 하고 의존성을 높이는 통제 행동을 일컫는 말은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '자신이 특별하다고 느끼는 자기중심적 상태입니다.')">① 나르시시즘</li>
+        <li onclick="checkMul(this, true, '상대의 기분을 조작해 잘못을 전가하고 조종하는 행위는 가스라이팅입니다.')">② 가스라이팅</li>
+        <li onclick="checkMul(this, false, '인간관계를 잃을까 두려워하는 부정적 감정입니다.')">③ 질투</li>
+        <li onclick="checkMul(this, false, '데이트 상대에게 행하는 성폭력입니다.')">④ 교제강간</li>
+        <li onclick="checkMul(this, false, '관계의 전환점으로 미끄러져 들어가는 방식입니다.')">⑤ 슬라이딩(Sliding)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q9.</span> <div class="q-title">애착 유형 중 '자신에 대해 부정적이고 타인에 대해 긍정적이며, 버림받을까 두려워 과도하게 집착하는 유형'은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '자신과 타인 모두를 긍정적으로 봅니다.')">① 안정형</li>
+        <li onclick="checkMul(this, true, '타인을 긍정적으로 보면서도 버림받을까 두려워 집착하는 유형은 불안형(집착형)입니다.')">② 불안형(집착형)</li>
+        <li onclick="checkMul(this, false, '독립성을 지나치게 중시하며 거리감을 둡니다.')">③ 회피형(거부형)</li>
+        <li onclick="checkMul(this, false, '자신과 타인 모두 부정적으로 보며 밀어냅니다.')">④ 혼돈형(공포형 회피)</li>
+        <li onclick="checkMul(this, false, '애착 유형 분류에 해당하지 않습니다.')">⑤ 방임형</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q10.</span> <div class="q-title">교제폭력(Intimate Partner Violence)에 대한 설명으로 틀린 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '심리적, 신체적, 언어적, 성적 폭력을 모두 포함합니다.')">① 신체적 폭력뿐 아니라 심리적 폭력도 포함된다.</li>
+        <li onclick="checkMul(this, false, '가시적이지 않지만 내면에 큰 고통을 남깁니다.')">② 심리적 폭력은 가시적이지 않아도 더 큰 고통을 초래할 수 있다.</li>
+        <li onclick="checkMul(this, true, '교제폭력은 가해자가 상대를 통제하기 위해 애착과 두려움을 동시에 느끼게 하여 굴레에서 벗어나기 어렵게 만듭니다.')">③ 폭력의 피해자는 언제나 쉽게 그 관계를 끊을 수 있다.</li>
+        <li onclick="checkMul(this, false, '통제와 간섭을 통해 상대에게 방식을 강요합니다.')">④ 심리적 폭력은 주로 통제와 간섭으로 이루어진다.</li>
+        <li onclick="checkMul(this, false, '폭력의 원인이 자신에게 돌려 정당화하는 경우도 있습니다.')">⑤ 피해자가 폭력의 원인을 자신에게 돌리는 경우도 존재한다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q11.</span> <div class="q-title">사람들이 자신과 비슷한 태도나 조건(연령, 교육, 종교 등)을 가진 사람에게 매력을 느끼는 경향을 설명하는 이론은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, true, '자신과 유사한 특성을 가진 사람을 선택한다는 이론은 동질성 이론입니다.')">① 동질성 이론</li>
+        <li onclick="checkMul(this, false, '서로 부족한 점을 채워주는 특성에 끌린다는 이론입니다.')">② 보완욕구 이론</li>
+        <li onclick="checkMul(this, false, '최소 비용으로 최대 보상을 얻으려 한다는 이론입니다.')">③ 사회교환 이론</li>
+        <li onclick="checkMul(this, false, '6개의 여과망을 거쳐 최종 선택한다는 이론입니다.')">④ 여과망 이론</li>
+        <li onclick="checkMul(this, false, '공정한 거래에 매력을 느낀다는 이론입니다.')">⑤ 공평 이론</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q12.</span> <div class="q-title">Udry(1971)의 여과망 이론에서 '졸업, 취업, 군복무 완료' 등과 관련된 마지막 여과망 단계는?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '시간적, 공간적 범위 제한 단계입니다.')">① 근접성의 여과망</li>
+        <li onclick="checkMul(this, false, '나이, 종교, 계층 등이 유사한 사람을 거르는 단계입니다.')">② 사회적 배경의 여과망</li>
+        <li onclick="checkMul(this, false, '태도나 가치관이 유사한지 확인하는 단계입니다.')">③ 상호의견일치의 여과망</li>
+        <li onclick="checkMul(this, false, '서로의 욕구 충족 가능성을 파악하는 단계입니다.')">④ 상호보완성의 여과망</li>
+        <li onclick="checkMul(this, true, '졸업, 취업 등 현실적인 여건을 갖추었는지 확인하는 마지막 단계는 결혼준비상태의 여과망입니다.')">⑤ 결혼준비상태의 여과망</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q13.</span> <div class="q-title">Murstein(1987)의 SVR 이론에서 두 번째 단계인 '가치 비교 단계'의 특징은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '자극 단계(첫 만남)의 특징입니다.')">① 외모나 사회적 기술에 기초하여 매력을 느낌</li>
+        <li onclick="checkMul(this, true, '인생 목표나 결혼관 등 가치관의 유사성을 느끼며 관계가 발전하는 단계입니다.')">② 인생의 목표나 결혼관 등 주요 영역의 가치관 유사성을 인식</li>
+        <li onclick="checkMul(this, false, '역할 단계의 특징입니다.')">③ 부부로서 수행할 역할에 얼마나 적합한지 측정</li>
+        <li onclick="checkMul(this, false, '여과망 이론의 설명입니다.')">④ 근접성을 바탕으로 상대를 탐색</li>
+        <li onclick="checkMul(this, false, 'SVR 이론의 핵심 단계가 아닙니다.')">⑤ 최소의 비용으로 최대의 보상을 계산</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q14.</span> <div class="q-title">의사결정패턴 관점 중 '의도적인 대화 없이 상황에 따라 성행동이나 동거로 미끄러져 들어가는 것'을 지칭하는 용어는?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '사려 깊고 명확한 결정을 하는 방식입니다.')">① 디사이딩(Deciding)</li>
+        <li onclick="checkMul(this, true, '명확한 결정 없이 상황에 미끄러져 들어가는 방식은 슬라이딩(Sliding)입니다.')">② 슬라이딩(Sliding)</li>
+        <li onclick="checkMul(this, false, '생애 과정의 장기적 패턴입니다.')">③ 궤적(Trajectory)</li>
+        <li onclick="checkMul(this, false, '단기적이고 특정적인 변화를 의미합니다.')">④ 전이(Transition)</li>
+        <li onclick="checkMul(this, false, '이론적 관점이 아닙니다.')">⑤ 드리프팅(Drifting)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q15.</span> <div class="q-title">'가족 난민' 현상에 대한 야마다 마사히로(2019)의 설명으로 가장 적절한 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, true, '부모에게 의존하던 싱글이 부모 사망 후 고립되는 사회 현상을 의미합니다.')">① 부모에게 의존하던 중년 싱글이 부모 사망 후 경제적, 심리적으로 고립됨</li>
+        <li onclick="checkMul(this, false, '전통 사회의 보편적 현상이 아닙니다.')">② 전쟁으로 인해 가족을 잃은 피난민들을 지칭함</li>
+        <li onclick="checkMul(this, false, '결혼이 쉬워진 시대의 결과가 아닙니다.')">③ 누구나 원하면 쉽게 결혼할 수 있게 된 시대적 현상</li>
+        <li onclick="checkMul(this, false, '동성애자의 법적 권리와 관련된 용어가 아닙니다.')">④ 동성 결혼을 인정받지 못한 커플들을 지칭함</li>
+        <li onclick="checkMul(this, false, '사후에 거두어 줄 사람이 없는 죽음을 뜻합니다.')">⑤ 고독사 자체만을 의미하는 용어임</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q16.</span> <div class="q-title">[단답형] 생애과정 관점에서 전이(transition)들이 누적되어 형성되는 장기적이고 지속적인 삶의 패턴을 무엇이라 하는가?</div>
+    <div class="input-group">
+        <input type="text" id="ans16" placeholder="답을 입력하세요" onkeypress="if(event.keyCode==13) checkShort(16, '궤적', '장기적 경로를 뜻하는 궤적(trajectory)입니다.')">
+        <button class="btn-check" onclick="checkShort(16, '궤적', '장기적 경로를 뜻하는 궤적(trajectory)입니다.')">정답 확인</button>
+    </div>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q17.</span> <div class="q-title">[단답형] 교제폭력 해결의 열쇠로서, 피해자가 가해자의 애정 욕구와 폭력 상처를 분별하며 '이것'을 인식하는 것이 가장 중요한 동력이 된다. '이것'은?</div>
+    <div class="input-group">
+        <input type="text" id="ans17" placeholder="답을 입력하세요" onkeypress="if(event.keyCode==13) checkShort(17, '자신이 폭력을 당하고 있다', '자신이 폭력을 당하고 있다는 사실을 인식하는 것이 해결의 시작입니다.')">
+        <button class="btn-check" onclick="checkShort(17, '자신이 폭력을 당하고 있다는 사실', '자신이 폭력을 당하고 있다는 사실을 인식하는 것이 해결의 시작입니다.')">정답 확인</button>
+    </div>
+    <div class="feedback"></div>
+</div>
+
+<script>
+    function checkMul(el, isCorrect, explanation) {
+        const card = el.closest('.question-card');
+        const feedback = card.querySelector('.feedback');
+        const options = card.querySelectorAll('li');
+        
+        options.forEach(li => li.className = '');
+        
+        if (isCorrect) {
+            el.className = 'correct';
+            feedback.innerHTML = `<span class="result-icon">✅</span> <strong>정답입니다!</strong><br>${explanation}`;
+        } else {
+            el.className = 'wrong';
+            feedback.innerHTML = `<span class="result-icon">❌</span> <strong>오답입니다.</strong><br>${explanation}`;
+        }
+        feedback.className = 'feedback show';
+    }
+
+    function checkShort(id, correct, explanation) {
+        const input = document.getElementById('ans' + id);
+        const card = input.closest('.question-card');
+        const feedback = card.querySelector('.feedback');
+        const val = input.value.trim();
+        
+        if (val.includes(correct)) {
+            feedback.innerHTML = `<span class="result-icon">✅</span> <strong>정답입니다!</strong><br>${explanation}`;
+        } else {
+            feedback.innerHTML = `<span class="result-icon">❌</span> <strong>틀렸습니다.</strong> 다시 생각해보세요.<br>(힌트: ${explanation.split('.')[0]}...)`;
+        }
+        feedback.className = 'feedback show';
+    }
+</script>
+
+</body>
+</html>

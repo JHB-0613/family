@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가족의 이해 4주차(2) - 성과 성행동 퀴즈</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.6; padding: 20px; max-width: 850px; margin: auto; background-color: #f8fafc; color: #334155; }
+        h1 { color: #1e293b; text-align: center; border-bottom: 4px solid #3b82f6; padding-bottom: 15px; margin-bottom: 40px; }
+        .question-card { background: white; margin-bottom: 30px; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        .q-num { color: #3b82f6; font-weight: bold; margin-right: 5px; }
+        .q-title { font-weight: bold; font-size: 1.1em; margin-bottom: 20px; display: inline-block; }
+        .options { list-style: none; padding: 0; }
+        .options li { 
+            background: #f1f5f9; margin: 12px 0; padding: 14px; border-radius: 10px; 
+            border: 2px solid transparent; cursor: pointer; transition: 0.2s;
+        }
+        .options li:hover { background: #e2e8f0; }
+        .options li.correct { background: #dcfce7; border-color: #22c55e; color: #166534; font-weight: bold; }
+        .options li.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+        
+        .input-group { display: flex; gap: 10px; margin-top: 15px; }
+        input[type="text"] { flex: 1; padding: 12px; border: 2px solid #cbd5e1; border-radius: 8px; font-size: 1em; }
+        .btn-check { background-color: #3b82f6; color: white; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        
+        .feedback { display: none; margin-top: 20px; padding: 18px; border-radius: 10px; font-size: 0.95em; line-height: 1.6; animation: fadeIn 0.3s; }
+        .feedback.show { display: block; background-color: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a; }
+        .result-icon { font-size: 1.2em; margin-right: 8px; vertical-align: middle; }
+        
+        .nav-container { text-align: center; margin-bottom: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .nav-btn { background-color: #ffffff; color: #3b82f6; border: 2px solid #3b82f6; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; }
+        .nav-btn:hover { background-color: #3b82f6; color: #ffffff; }
+        .nav-btn.active { background-color: #3b82f6; color: #ffffff; box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<h1>가족의 이해 4주차(2) 성과 성행동 퀴즈</h1>
+
+<div class="nav-container">
+    <button class="nav-btn" onclick="location.href='index.html'">2주차</button>
+    <button class="nav-btn" onclick="location.href='week3.html'">3주차</button>
+    <button class="nav-btn" onclick="location.href='week4.html'">4주차</button>
+    <button class="nav-btn active" onclick="location.href='week4_2.html'">4주차-2</button>
+    <button class="nav-btn" onclick="location.href='week6.html'">6주차</button>
+    <button class="nav-btn" onclick="location.href='week7.html'">7주차</button>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q1.</span> <div class="q-title">자신이 여성인지 남성인지, 혹은 그 이외의 성인지를 인식하는 심리적 감각을 무엇이라 하는가?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '성적 지향은 어떤 대상에게 끌리는지를 의미합니다.')">① 성적 지향(Sexual Orientation)</li>
+        <li onclick="checkMul(this, true, '자신이 어떤 성별인지 인식하는 것은 성 정체성입니다.')">② 성 정체성(Gender Identity)</li>
+        <li onclick="checkMul(this, false, '성 역할은 사회적 기대를 의미합니다.')">③ 성 역할(Gender Role)</li>
+        <li onclick="checkMul(this, false, '생물학적 성은 신체적 특징에 기반합니다.')">④ 생물학적 성(Sex)</li>
+        <li onclick="checkMul(this, false, '성 정체성에 대한 설명입니다.')">⑤ 성적 자기결정권</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q2.</span> <div class="q-title">성적 권리와 책임에 대한 설명 중 '성적 자기결정권'에 포함되지 않는 내용은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '자신의 성적 행동을 결정할 권리는 포함됩니다.')">① 성적 행동을 스스로 결정할 권리</li>
+        <li onclick="checkMul(this, false, '성적 주체로서 자신을 인식할 권리는 포함됩니다.')">② 성적 주체로서 자신을 인식할 권리</li>
+        <li onclick="checkMul(this, true, '타인의 결정에 따르거나 타인에게 강요할 권리는 포함되지 않습니다.')">③ 타인의 성적 결정에 무조건 따를 의무</li>
+        <li onclick="checkMul(this, false, '원치 않는 성행위를 거부할 권리는 포함됩니다.')">④ 원치 않는 성행위를 거부할 권리</li>
+        <li onclick="checkMul(this, false, '성적 행동에 따르는 결과를 책임지는 태도는 포함됩니다.')">⑤ 자신의 성적 결정에 책임을 지는 태도</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q3.</span> <div class="q-title">먹는 피임약(경구피임약)의 올바른 복용 방법으로 옳은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '72시간 이내 복용은 응급피임약입니다.')">① 성관계 직후 72시간 이내에 복용한다.</li>
+        <li onclick="checkMul(this, true, '생리 첫날부터 매일 정해진 시간에 꾸준히 복용해야 99.8%의 효과가 있습니다.')">② 생리 첫날부터 매일 정해진 시간에 꾸준히 복용한다.</li>
+        <li onclick="checkMul(this, false, '일주일에 한 번씩만 복용하면 효과가 없습니다.')">③ 일주일에 한 번씩 몰아서 복용한다.</li>
+        <li onclick="checkMul(this, false, '성관계가 있는 날에만 복용하는 것은 올바른 방법이 아닙니다.')">④ 성관계가 예정된 날 아침에만 복용한다.</li>
+        <li onclick="checkMul(this, false, '생리 첫날부터 복용을 시작해야 합니다.')">⑤ 생리가 끝난 직후부터 복용을 시작한다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q4.</span> <div class="q-title">강의 자료에 나타난 '성과 사랑'에 대한 남녀의 인식 차이로 가장 적절한 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '여성이 남성보다 성과 사랑을 연결 지어 생각하는 경향이 더 높게 나타납니다.')">① 남성이 여성보다 성과 사랑을 더 밀접하게 연관시킨다.</li>
+        <li onclick="checkMul(this, true, '여성은 성적 친밀감을 사랑의 확인이나 관계의 심화로 인식하는 경향이 상대적으로 강합니다.')">② 여성은 성행동을 사랑의 확인이나 친밀감 강화의 수단으로 보는 경향이 있다.</li>
+        <li onclick="checkMul(this, false, '현대 사회에서도 성에 대한 태도는 성별에 따른 차이가 통계적으로 발견됩니다.')">③ 남녀 모두 성과 사랑을 분리하는 정도가 완벽하게 일치한다.</li>
+        <li onclick="checkMul(this, false, '남성이 여성보다 성적 욕구 해소라는 측면을 더 강조하는 경향이 있습니다.')">④ 여성이 남성보다 성적 욕구 충족 그 자체를 목적으로 하는 경우가 더 많다.</li>
+        <li onclick="checkMul(this, false, '성적 행동에 대한 동기는 개인차와 성별 차이가 모두 존재합니다.')">⑤ 성적 행동의 동기는 성별과 전혀 상관없이 오직 개인의 성격에만 좌우된다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q5.</span> <div class="q-title">과거 한국 사회에서 남성의 성적 경험은 능력으로, 여성의 성적 경험은 부도덕함으로 간주했던 현상을 지칭하는 용어는?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '성 정체성은 자신의 성별에 대한 인식을 뜻합니다.')">① 성 정체성(Gender Identity)</li>
+        <li onclick="checkMul(this, true, '성별에 따라 서로 다른 성 윤리 잣대를 적용하는 것을 성적 이중표준이라고 합니다.')">② 성적 이중표준(Sexual Double Standard)</li>
+        <li onclick="checkMul(this, false, '성적 지향은 이성/동성 등 이끌림의 대상을 뜻합니다.')">③ 성적 지향(Sexual Orientation)</li>
+        <li onclick="checkMul(this, false, '성적 자기결정권은 스스로 결정할 권리를 뜻합니다.')">④ 성적 자기결정권</li>
+        <li onclick="checkMul(this, false, '성 역할은 사회가 기대하는 성별 행동 양식입니다.')">⑤ 성 역할(Gender Role)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q6.</span> <div class="q-title">자연 피임법 중 '월경주기 동안의 체온 변화를 측정하여 피임 가능 시기를 계산하는 방법'은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, true, '체온 변화를 통해 배란기를 파악하는 방법은 기초체온법입니다.')">① 기초체온법</li>
+        <li onclick="checkMul(this, false, '월경주기법은 달력으로 날짜를 계산합니다.')">② 월경주기법</li>
+        <li onclick="checkMul(this, false, '점액관찰법은 분비물의 점성을 확인합니다.')">③ 점액관찰법</li>
+        <li onclick="checkMul(this, false, '자연 피임법에 대한 설명입니다.')">④ 살정제법</li>
+        <li onclick="checkMul(this, false, '자연 피임법에 대한 설명입니다.')">⑤ 자궁경부 캡</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q7.</span> <div class="q-title">피임 방법과 그 특징의 연결이 틀린 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '콘돔은 성병 예방 효과가 있습니다.')">① 콘돔 - 성병 예방 가능</li>
+        <li onclick="checkMul(this, false, '경구피임약은 99.8%의 높은 피임률을 보입니다.')">② 먹는 피임약 - 99.8%의 높은 피임률</li>
+        <li onclick="checkMul(this, true, '질외사정은 실패율이 매우 높은 불안전한 방법입니다.')">③ 질외사정 - 가장 안전하고 권장되는 방법</li>
+        <li onclick="checkMul(this, false, '자궁 내 장치는 병원에서 시술받아야 합니다.')">④ 자궁 내 장치 - 병원 진료나 처방 필요</li>
+        <li onclick="checkMul(this, false, '응급피임약은 고농도 호르몬제입니다.')">⑤ 응급피임약 - 고농도 에스트로겐 포함</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q8.</span> <div class="q-title">2020년 4월 헌법재판소의 판결 이후, 2021년 12월부터 시행된 낙태(임신 중단) 관련 내용은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '전면 금지가 아닌 위헌 판결이 났습니다.')">① 낙태를 전면 금지하며 처벌을 강화한다.</li>
+        <li onclick="checkMul(this, true, '임신 14주 이내의 낙태는 허용되며 처벌받지 않습니다.')">② 임신 14주 이내 낙태 시 처벌하지 않는다.</li>
+        <li onclick="checkMul(this, false, '남편의 동의가 필수는 아닙니다.')">③ 반드시 남편의 동의가 있어야만 낙태가 가능하다.</li>
+        <li onclick="checkMul(this, false, '24주 이내는 특정 사유가 있을 때 가능합니다.')">④ 임신 30주까지 아무 조건 없이 낙태가 가능하다.</li>
+        <li onclick="checkMul(this, false, '헌법재판소는 위헌 판결을 내렸습니다.')">⑤ 헌법재판소는 낙태죄가 합헌이라고 최종 결정했다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q9.</span> <div class="q-title">성적 지향(Sexual Orientation)에 대한 설명으로 옳은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, true, '성적 지향은 자신이 어떤 성별의 대상에게 정서적, 성적으로 끌리는지를 나타냅니다.')">① 자신이 어떤 성별의 대상에게 끌리는지를 나타내는 개념이다.</li>
+        <li onclick="checkMul(this, false, '성 정체성에 대한 설명입니다.')">② 자신이 스스로를 남성 혹은 여성으로 인식하는 감각이다.</li>
+        <li onclick="checkMul(this, false, '성 역할에 대한 설명입니다.')">③ 사회에서 요구하는 성별에 따른 행동 규범이다.</li>
+        <li onclick="checkMul(this, false, '성적 지향은 선천적/후천적 요인이 복합적으로 작용합니다.')">④ 오직 교육을 통해서만 후천적으로 결정되는 가치관이다.</li>
+        <li onclick="checkMul(this, false, '생물학적 성(Sex)에 대한 설명입니다.')">⑤ 태어날 때 결정된 신체적 성징을 의미한다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q10.</span> <div class="q-title">다음 중 현대 사회의 성 가치관 및 성의식에 대한 설명으로 가장 적절하지 않은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '전통적 성의식에서는 성을 결혼 제도 안에서의 생식 목적으로 제한하여 보았습니다.')">① 전통적 성의식은 성을 종족 보존과 생식을 위한 수단으로 강조한다.</li>
+        <li onclick="checkMul(this, false, '개방적 성의식은 성을 개인의 즐거움과 친밀감 표현의 수단으로 보는 경향이 있습니다.')">② 개방적 성의식은 성을 개인의 자유로운 선택과 쾌락의 영역으로 간주한다.</li>
+        <li onclick="checkMul(this, true, '현대 사회에서는 성별에 따라 서로 다른 성 윤리를 적용하는 성적 이중표준(Sexual Double Standard)을 지양하고 평등한 성의식을 강조합니다.')">③ 현대 사회는 남성에게는 성적 자유를, 여성에게는 정절을 요구하는 이중표준을 권장한다.</li>
+        <li onclick="checkMul(this, false, '최근에는 성을 결혼과 분리하여 사랑하는 관계에서의 친밀함으로 보는 시각이 확산되었습니다.')">④ 성과 사랑, 그리고 결혼을 분리해서 생각하는 가치관이 점차 확산되고 있다.</li>
+        <li onclick="checkMul(this, false, '성적 주체로서 자신의 욕구를 인식하고 책임지는 태도가 현대 성교육의 핵심입니다.')">⑤ 개인의 성적 자기결정권을 존중하며 그에 따른 책임을 강조하는 방향으로 변화하고 있다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q11.</span> <div class="q-title">세계보건기구(WHO)에서 정의한 개념으로, 단순히 성적 행위(Sex)만을 뜻하는 것이 아니라 성적 지향, 성 정체성, 욕망, 친밀감, 생식 등을 포함하며 생물학적·심리적·사회적 요인이 복합적으로 작용하여 형성되는 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, 'Sex는 남/여의 생물학적 성만을 의미합니다.')">① Sex (생물학적 성)</li>
+        <li onclick="checkMul(this, false, 'Gender는 사회문화적, 심리적인 성을 의미합니다.')">② Gender (사회적 성)</li>
+        <li onclick="checkMul(this, true, 'Sexuality는 자신을 성적인 존재로 정의하는 가치나 믿음을 포함한 인간의 기본적인 측면을 의미합니다.')">③ Sexuality (성성)</li>
+        <li onclick="checkMul(this, false, 'Gender Identity는 자신이 인식하고 느끼는 성별을 의미합니다.')">④ Gender Identity (성 정체성)</li>
+        <li onclick="checkMul(this, false, 'Sexual Orientation은 성적·정서적으로 끌림을 느끼는 대상을 의미합니다.')">⑤ Sexual Orientation (성적 지향)</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q12.</span> <div class="q-title">자연 피임법 중 '배란기 자궁경부 점액의 양이 많아지고 투명하며 잘 늘어나는 성질'을 이용하는 방법은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '온도 변화를 이용합니다.')">① 기초체온법</li>
+        <li onclick="checkMul(this, true, '점액의 상태를 관찰하는 것은 점액관찰법입니다.')">② 점액관찰법</li>
+        <li onclick="checkMul(this, false, '날짜를 계산합니다.')">③ 월경주기법</li>
+        <li onclick="checkMul(this, false, '물리적/화학적 차단법입니다.')">④ 차단 피임법</li>
+        <li onclick="checkMul(this, false, '병원에서 시술합니다.')">⑤ 임플라논 시술</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q13.</span> <div class="q-title">강의 자료에 나타난 '남녀 대화 목적의 차이'에 대한 설명으로 가장 적절한 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '남성은 정보를 얻거나 문제 해결의 실마리를 찾기 위해 대화하는 경향이 큽니다.')">① 남성은 주로 기분을 풀고 자신의 감정을 해소하기 위해 이야기를 나눈다.</li>
+        <li onclick="checkMul(this, true, '여성은 일상 경험이나 감정을 나누는 과정에서 자신의 생각을 정리하고 감정을 해소하기도 한다.')">② 여성은 감정을 나누는 과정을 통해 생각을 정리하고 정서적 문제를 해결하는 경험을 한다.</li>
+        <li onclick="checkMul(this, false, '남성은 감정을 절제하고 표현하지 않도록 훈련받아 감정 교류가 드문 편입니다.')">③ 남성은 여성보다 자신의 약한 면이나 부정적인 감정을 말로 표현하는 데 적극적이다.</li>
+        <li onclick="checkMul(this, false, '여성도 정보 전달을 위해 대화하지만, 감정 해소의 목적이 남성보다 강합니다.')">④ 여성은 오직 정보와 사실 전달만을 목적으로 대화에 참여한다.</li>
+        <li onclick="checkMul(this, false, '남녀 간 대화 동기에는 차이가 존재한다고 명시되어 있습니다.')">⑤ 대화의 동기는 성별과 상관없이 언제나 문제 해결에만 초점이 맞춰져 있다.</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q14.</span> <div class="q-title">성적 의사소통에서 가장 중요한 태도는 무엇인가?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '일방적 결정은 올바르지 않습니다.')">① 자신의 욕구만을 일방적으로 주장하기</li>
+        <li onclick="checkMul(this, true, '서로의 의사를 존중하고 명확하게 동의를 구하며 소통하는 것입니다.')">② 상대방의 의사를 존중하고 명확한 동의 구하기</li>
+        <li onclick="checkMul(this, false, '침묵이 항상 긍정은 아닙니다.')">③ 상대방이 싫다고 말하지 않으면 찬성으로 간주하기</li>
+        <li onclick="checkMul(this, false, '분위기보다 명확한 의사가 중요합니다.')">④ 분위기를 깨지 않기 위해 원치 않아도 순응하기</li>
+        <li onclick="checkMul(this, false, '회피는 문제를 해결하지 못합니다.') ">⑤ 성적인 주제에 대해서는 대화를 최대한 피하기</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q15.</span> <div class="q-title">피임법 선택 시 고려해야 할 사항으로 적절하지 않은 것은?</div>
+    <ul class="options">
+        <li onclick="checkMul(this, false, '피임 효과(성공률)는 매우 중요합니다.')">① 피임의 효과성 및 성공률</li>
+        <li onclick="checkMul(this, false, '자신의 건강 상태와 부작용을 고려해야 합니다.')">② 사용자의 건강 상태와 부작용 여부</li>
+        <li onclick="checkMul(this, false, '편의성과 경제성도 고려 대상입니다.')">③ 사용의 편리함과 비용</li>
+        <li onclick="checkMul(this, false, '성병 예방 필요성도 확인해야 합니다.')">④ 성병 예방 가능 여부</li>
+        <li onclick="checkMul(this, true, '상대방에게 모든 책임을 떠넘기는 태도는 피임 선택의 원칙이 아닙니다.')">⑤ 모든 책임을 상대방에게 전가할 수 있는지 여부</li>
+    </ul>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q16.</span> <div class="q-title">[단답형] 자신이 어떤 성별의 대상에게 정서적, 성적, 로맨틱한 끌림을 느끼는지를 나타내는 개념은?</div>
+    <div class="input-group">
+        <input type="text" id="ans16" placeholder="답을 입력하세요" onkeypress="if(event.keyCode==13) checkShort(16, '성적 지향', '이성애, 동성애, 양성애 등을 포함하는 성적 지향(Sexual Orientation)입니다.')">
+        <button class="btn-check" onclick="checkShort(16, '성적 지향', '이성애, 동성애, 양성애 등을 포함하는 성적 지향(Sexual Orientation)입니다.')">정답 확인</button>
+    </div>
+    <div class="feedback"></div>
+</div>
+
+<div class="question-card">
+    <span class="q-num">Q17.</span> <div class="q-title">[단답형] 성관계 후 72시간 이내에 복용하여 임신을 방지하는 피임약의 명칭은?</div>
+    <div class="input-group">
+        <input type="text" id="ans17" placeholder="답을 입력하세요" onkeypress="if(event.keyCode==13) checkShort(17, '응급피임약', '사후피임약이라고도 불리는 응급피임약입니다.')">
+        <button class="btn-check" onclick="checkShort(17, '응급피임약', '사후피임약이라고도 불리는 응급피임약입니다.')">정답 확인</button>
+    </div>
+    <div class="feedback"></div>
+</div>
+
+<script>
+    function checkMul(el, isCorrect, explanation) {
+        const card = el.closest('.question-card');
+        const feedback = card.querySelector('.feedback');
+        const options = card.querySelectorAll('li');
+        
+        options.forEach(li => li.className = '');
+        
+        if (isCorrect) {
+            el.className = 'correct';
+            feedback.innerHTML = `<span class="result-icon">✅</span> <strong>정답입니다!</strong><br>${explanation}`;
+        } else {
+            el.className = 'wrong';
+            feedback.innerHTML = `<span class="result-icon">❌</span> <strong>오답입니다.</strong><br>${explanation}`;
+        }
+        feedback.className = 'feedback show';
+    }
+
+    function checkShort(id, correct, explanation) {
+        const input = document.getElementById('ans' + id);
+        const card = input.closest('.question-card');
+        const feedback = card.querySelector('.feedback');
+        const val = input.value.trim();
+        
+        if (val.includes(correct)) {
+            feedback.innerHTML = `<span class="result-icon">✅</span> <strong>정답입니다!</strong><br>${explanation}`;
+        } else {
+            feedback.innerHTML = `<span class="result-icon">❌</span> <strong>틀렸습니다.</strong> 다시 생각해보세요.<br>(힌트: ${explanation.split('.')[0]}...)`;
+        }
+        feedback.className = 'feedback show';
+    }
+</script>
+
+</body>
+</html>
